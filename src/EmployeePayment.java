@@ -1,9 +1,9 @@
 
 import java.util.Scanner;
-import java.util.concurrent.TransferQueue;
 
 public class EmployeePayment {
     public static void main(String[] args) {
+     System.out.println(emid(6));
         /*
         Overview:
 As you have learned throughout this unit, arrays are very powerful tools designed to perform complex tasks with large amounts of data. Therefore, as a continuation of your course portfolio, for this assignment you will be required to use arrays to store, manipulate, and display employee data.
@@ -41,16 +41,47 @@ Sort the initial array into numerical order
 A two dimensional array to store employee ID and employee type
 Depending on program design, you may use interim arrays to hold hourly and salaried workers for the final reporting, or you may sort the array by employee type before reporting, or some combination thereof.
          */
-        int Employeelist[] =;
     }
     public static Boolean check(){
-        System.out.println("Is this your final input? (Y/N)");
-        String Check = "";
+        Scanner myObj = new Scanner(System.in);
         Boolean result = true;
+
+        System.out.println("Is this your final input? (Y/N)");
+        String Check = myObj.next();
+        if(Check.equals("y") || Check.equals("Y")){
+            result = true;
+        } else if(Check.equals("n") || Check.equals("N")){
+            result = false;
+        }
         return result;
     }
-    public static Array emtype(){
+    public static int emnum(){
+        Scanner myObj = new Scanner(System.in);
+        Boolean numcheck = false;
+        int em_num = 0;
+        System.out.println("This is a program for entering payment types for employees.\n Begin be enterting the number of employees you wish to add to this list.\n Then eneter their 10-digit employee number.\n Finally, when prompted with an ID, please enter 1 if they have a salary, or 2 if they are paid hourly");
+        while(numcheck == false) {
+            System.out.println("Please enter the number of employees you wish to add into the program.");
 
-        return a;
+            em_num = myObj.nextInt();
+            if (check()) {
+                numcheck = true;
+            }
+        }
+
+        return em_num;
+    }
+    public static int[] emid(int num){
+        Scanner myObj = new Scanner(System.in);
+        Boolean idcheck = false;
+        int[] emids = new int [num];
+        int num2 = 0;
+            while (num2!=num){
+                System.out.println("Please enter the 10-digit id number of the employee.");
+                int emid = myObj.nextInt();
+                emids[num2] = emid;
+                num2-=1 ;
+            }
+        return emids;
     }
 }
